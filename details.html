@@ -1,8 +1,15 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover the Deluxe City View room at The Grand Hotel Jakarta, with skyline views, a king bed, and refined modern comforts."
+    />
+    <title>Room Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Jost:wght@300;400;500&display=swap"
       rel="stylesheet"
@@ -11,333 +18,180 @@
     <link rel="icon" href="assets/Logo.png" />
   </head>
 
-  <body>
-    <!-- NAV -->
-    <nav>
-      <div class="nav-inner">
-        <a class="logo" href="#">The<span>Grand</span></a>
-        <button
-          class="nav-back"
-          onclick="showToast('Kembali ke halaman Rooms...', 'info')"
-        >
-          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
-          Back to Rooms
-        </button>
-      </div>
-    </nav>
-
-    <!-- PROGRESS -->
-    <div class="progress-bar">
-      <div class="progress-inner">
-        <div class="step done">
-          <span class="step-num">✓</span>
-          <span class="step-label">Select Room</span>
+  <body class="room-detail-page">
+    <main>
+      <section class="detail-hero" aria-labelledby="room-title">
+        <img src="assets/Deluxe.jpeg" alt="Deluxe City View" id="detail-img" />
+        <div class="detail-hero-overlay"></div>
+        <div class="detail-hero-content">
+          <a class="detail-back" href="rooms.html">
+            <span aria-hidden="true">&#8592;</span> Back to all rooms
+          </a>
+          <h1 id="room-title">Deluxe City View</h1>
         </div>
-        <div class="step-divider"></div>
-        <div class="step active">
-          <span class="step-num">2</span>
-          <span class="step-label">Booking Details</span>
+        <div class="detail-scroll-cue" aria-hidden="true">
+          <span>Discover</span>
+          <i></i>
         </div>
-        <div class="step-divider"></div>
-        <div class="step inactive">
-          <span class="step-num">3</span>
-          <span class="step-label">Confirmation</span>
-        </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- MAIN -->
-    <div class="booking-wrapper">
-      <!-- LEFT -->
-      <div class="booking-left">
-        <!-- Room Summary -->
-        <div class="section-label-gold">Your Selection</div>
-        <div class="section-title">Review & Complete Your Booking</div>
+      <section class="detail-overview" aria-labelledby="overview-title">
+        <div class="detail-copy">
+          <p class="section-label-gold">The room</p>
+          <h2 id="overview-title">Your private view over Jakarta.</h2>
+          <p>
+            Our Deluxe City View is a 52-square-metre retreat designed around
+            the skyline. Floor-to-ceiling windows fill the room with natural
+            light, while warm timber, soft textiles, and considered details
+            create a calm counterpoint to the city below. Settle into a king
+            bed, unwind in the marble bathroom, and watch Jakarta glow after
+            dark from the comfort of your own sanctuary.
+          </p>
 
-        <div class="room-summary" id="room-summary-card">
-          <div class="room-thumb" id="room-thumb-bg">
-            <div class="room-thumb-pattern"></div>
-            <div class="room-thumb-num" id="room-thumb-num">01</div>
-            <div class="room-badge-thumb" id="room-badge">Deluxe</div>
-          </div>
-          <div class="room-summary-body">
-            <h3 id="room-name-display">Deluxe City View Room</h3>
-            <p
-              style="
-                font-size: 0.85rem;
-                color: var(--muted);
-                line-height: 1.7;
-                margin-top: 0.4rem;
-              "
-              id="room-desc-display"
-            >
-              A spacious retreat with panoramic city vistas and refined
-              contemporary interiors. Floor-to-ceiling windows, marble bathroom,
-              and custom-blend toiletries.
-            </p>
-            <div class="room-amenities-row">
-              <span class="amenity-tag">🛏 King Bed</span>
-              <span class="amenity-tag">🛁 Bathtub</span>
-              <span class="amenity-tag">📶 Wi-Fi</span>
-              <span class="amenity-tag">🌆 City View</span>
-              <span class="amenity-tag">52 sqm</span>
+          <div class="detail-facts" aria-label="Room specifications">
+            <div class="detail-fact">
+              <span class="detail-fact-value">52</span>
+              <span class="detail-fact-label">Square metres</span>
+            </div>
+            <div class="detail-fact">
+              <span class="detail-fact-value">2</span>
+              <span class="detail-fact-label">Guests</span>
+            </div>
+            <div class="detail-fact">
+              <span class="detail-fact-value">King</span>
+              <span class="detail-fact-label">Bed</span>
+            </div>
+            <div class="detail-fact">
+              <span class="detail-fact-value">32F</span>
+              <span class="detail-fact-label">Floor</span>
             </div>
           </div>
         </div>
 
-        <!-- Date & Guest -->
-        <div class="form-block">
-          <div class="form-block-title">Stay Details</div>
-          <div class="form-row-2">
-            <div class="form-group">
-              <label>Check-in Date</label>
-              <input type="date" id="checkin" oninput="onDateChange()" />
-              <div class="input-error" id="err-checkin">
-                Pilih tanggal check-in
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Check-out Date</label>
-              <input type="date" id="checkout" oninput="onDateChange()" />
-              <div class="input-error" id="err-checkout">
-                Tanggal check-out harus setelah check-in
-              </div>
-            </div>
+        <aside class="detail-rate-card" aria-label="Room rate and reservation">
+          <p class="detail-rate-label">Rates from</p>
+          <p class="detail-rate">Rp 1.8 Jt</p>
+          <p class="detail-rate-note">Per room, per night. Taxes may apply.</p>
+          <a
+            class="btn-gold detail-reserve"
+            href="contact.html?room=deluxe-city-view"
+          >
+            Reserve this room
+          </a>
+          <a class="detail-contact-link" href="contact.html">
+            Ask our concierge
+          </a>
+        </aside>
+      </section>
+
+      <section class="detail-amenities" aria-labelledby="amenities-title">
+        <div class="detail-section-heading">
+          <div>
+            <p class="section-label-gold">Included in your stay</p>
+            <h2 id="amenities-title">Thoughtful comforts.</h2>
           </div>
-          <div class="form-group" style="margin-top: 0.5rem">
-            <label>Guests</label>
-            <div class="guest-counter">
-              <span class="guest-counter-label">Number of guests</span>
-              <button class="counter-btn" onclick="changeGuests(-1)">−</button>
-              <span class="counter-val" id="guest-count">2</span>
-              <button class="counter-btn" onclick="changeGuests(1)">+</button>
-            </div>
-          </div>
+          <p>
+            Everything you need to slow down, settle in, and feel completely at
+            home.
+          </p>
         </div>
 
-        <!-- Guest Info -->
-        <div class="form-block">
-          <div class="form-block-title">Guest Information</div>
-          <div class="form-row-2">
-            <div class="form-group">
-              <label>First Name</label>
-              <input
-                type="text"
-                id="fname"
-                placeholder="John"
-                oninput="validateField('fname')"
-              />
-              <div class="input-error" id="err-fname">
-                Nama depan wajib diisi
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Last Name</label>
-              <input type="text" id="lname" placeholder="Smith" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Email Address</label>
-            <input
-              type="email"
-              id="email"
-              placeholder="john@email.com"
-              oninput="validateField('email')"
-            />
-            <div class="input-error" id="err-email">
-              Masukkan email yang valid
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" id="phone" placeholder="+62 812 3456 7890" />
-          </div>
-        </div>
-
-        <!-- Add-ons -->
-        <div class="form-block">
-          <div class="form-block-title">Enhance Your Stay</div>
-          <div class="addon-list">
-            <div class="addon-item">
-              <div class="addon-left">
-                <input
-                  type="checkbox"
-                  class="addon-check"
-                  id="addon-breakfast"
-                  onchange="recalculate()"
-                />
-                <div>
-                  <div class="addon-name">Breakfast for 2</div>
-                  <div class="addon-desc">
-                    Daily buffet breakfast at The Grand Restaurant
-                  </div>
-                </div>
-              </div>
-              <div class="addon-price">+Rp 180K/night</div>
-            </div>
-            <div class="addon-item">
-              <div class="addon-left">
-                <input
-                  type="checkbox"
-                  class="addon-check"
-                  id="addon-spa"
-                  onchange="recalculate()"
-                />
-                <div>
-                  <div class="addon-name">Spa Package</div>
-                  <div class="addon-desc">
-                    60-min Javanese massage for 2 guests
-                  </div>
-                </div>
-              </div>
-              <div class="addon-price">+Rp 450K</div>
-            </div>
-            <div class="addon-item">
-              <div class="addon-left">
-                <input
-                  type="checkbox"
-                  class="addon-check"
-                  id="addon-transfer"
-                  onchange="recalculate()"
-                />
-                <div>
-                  <div class="addon-name">Airport Transfer</div>
-                  <div class="addon-desc">
-                    One-way private car from Soekarno–Hatta
-                  </div>
-                </div>
-              </div>
-              <div class="addon-price">+Rp 350K</div>
-            </div>
-            <div class="addon-item">
-              <div class="addon-left">
-                <input
-                  type="checkbox"
-                  class="addon-check"
-                  id="addon-early"
-                  onchange="recalculate()"
-                />
-                <div>
-                  <div class="addon-name">Early Check-in (10:00)</div>
-                  <div class="addon-desc">Subject to availability</div>
-                </div>
-              </div>
-              <div class="addon-price">+Rp 150K</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Special Requests -->
-        <div class="form-block">
-          <div class="form-block-title">Special Requests</div>
-          <div class="form-group" style="margin-bottom: 0">
-            <label>Notes for the hotel</label>
-            <textarea
-              id="notes"
-              placeholder="Honeymoon setup, high floor preference, dietary requirements..."
-            ></textarea>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT — PRICE SUMMARY -->
-      <div class="price-summary">
-        <div class="price-card">
-          <div class="price-card-label">Price Summary</div>
-          <h3>Booking Breakdown</h3>
-
-          <div class="price-room-mini">
-            <div class="price-room-dot"></div>
-            <div class="price-room-name" id="summary-room-name">
-              Deluxe City View Room
-            </div>
-          </div>
-
-          <div class="date-status empty" id="date-status">
-            Select check-in and check-out dates
-          </div>
-
-          <div class="nights-badge" id="nights-badge" style="display: none">
-            <strong id="nights-count">3</strong>
-            <span>nights</span>
-          </div>
-
-          <table class="breakdown" id="breakdown-table">
-            <tr>
-              <td class="bd-label" id="bd-room-label">Room rate</td>
-              <td class="bd-val" id="bd-room-val">—</td>
-            </tr>
-            <tr id="row-breakfast" style="display: none">
-              <td class="bd-label">
-                Breakfast (×<span id="bd-bf-nights">0</span> nights)
-              </td>
-              <td class="bd-val highlight" id="bd-bf-val">—</td>
-            </tr>
-            <tr id="row-spa" style="display: none">
-              <td class="bd-label">Spa package</td>
-              <td class="bd-val highlight" id="bd-spa-val">—</td>
-            </tr>
-            <tr id="row-transfer" style="display: none">
-              <td class="bd-label">Airport transfer</td>
-              <td class="bd-val highlight" id="bd-transfer-val">—</td>
-            </tr>
-            <tr id="row-early" style="display: none">
-              <td class="bd-label">Early check-in</td>
-              <td class="bd-val highlight" id="bd-early-val">—</td>
-            </tr>
-            <tr>
-              <td class="bd-label">Tax & service (21%)</td>
-              <td class="bd-val" id="bd-tax-val">—</td>
-            </tr>
-          </table>
-
-          <div class="divider-gold"></div>
-
-          <div class="total-row">
+        <div class="amenities-grid">
+          <div class="amenity-card">
+            <span class="amenity-number">01</span>
             <div>
-              <div class="total-label">Total</div>
-              <div class="total-note" id="total-note">
-                — nights × — per night
-              </div>
+              <strong>King-size bed</strong>
             </div>
-            <div class="total-amount" id="total-display">Rp —</div>
           </div>
-
-          <button
-            class="confirm-btn"
-            id="confirm-btn"
-            onclick="confirmBooking()"
-          >
-            Confirm Booking
-          </button>
-          <button
-            class="cancel-btn"
-            onclick="showToast('Booking dibatalkan.', 'info')"
-          >
-            Cancel
-          </button>
-
-          <div class="perks">
-            <div class="perk-item">
-              <span class="perk-check">✦</span> Free cancellation up to 48h
-              before
+          <div class="amenity-card">
+            <span class="amenity-number">02</span>
+            <div>
+              <strong>Panoramic city view</strong>
             </div>
-            <div class="perk-item">
-              <span class="perk-check">✦</span> Direct booking — best rate
-              guaranteed
+          </div>
+          <div class="amenity-card">
+            <span class="amenity-number">03</span>
+            <div>
+              <strong>Marble bathroom</strong>
             </div>
-            <div class="perk-item">
-              <span class="perk-check">✦</span> Complimentary welcome amenity
+          </div>
+          <div class="amenity-card">
+            <span class="amenity-number">04</span>
+            <div>
+              <strong>High-speed Wi-Fi</strong>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-    <!-- TOAST -->
-    <div class="toast" id="toast">
-      <span class="toast-icon" id="toast-icon">✦</span>
-      <span id="toast-msg">Message</span>
-    </div>
+      <section class="detail-gallery" aria-label="Deluxe room gallery">
+        <div class="detail-gallery-main">
+          <img
+            src="assets/Deluxe.jpeg"
+            alt="Panoramic Jakarta skyline from the Deluxe City View room"
+          />
+        </div>
+        <div class="detail-gallery-item">
+          <img src="assets/exp-1.jpg" alt="Deluxe room king bed and linens" />
+        </div>
+        <div class="detail-gallery-item">
+          <img src="assets/exp-2.jpg" alt="The Grand Hotel indoor pool" />
+        </div>
+      </section>
+
+      <section class="detail-cta">
+        <p class="section-label-gold">Your stay awaits</p>
+        <h2>Meet Jakarta from a different point of view.</h2>
+        <p class="detail-cta-copy">
+          Deluxe City View · From Rp 1.8 Jt per night
+        </p>
+        <a class="btn-gold" href="contact.html?room=deluxe-city-view">
+          Reserve your stay
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-top">
+        <div>
+          <span class="footer-logo">The<span>Grand</span></span>
+          <p class="footer-brand-text">
+            A world-class luxury hotel in the heart of Jakarta. Where every stay
+            becomes an unforgettable memory.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Hotel</h4>
+          <ul>
+            <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+            <li><a href="#">Dining</a></li>
+            <li><a href="#">Spa &amp; Wellness</a></li>
+            <li><a href="#">Events</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Info</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Promotions</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">Cancellation Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 The Grand Hotel. All rights reserved.</span>
+        <span>Jakarta, Indonesia</span>
+      </div>
+    </footer>
   </body>
 </html>

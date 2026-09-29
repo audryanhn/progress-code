@@ -2,6 +2,7 @@
 
 const rooms = [
   {
+    id: 0,
     name: "Deluxe City View",
     type: "Deluxe",
     description:
@@ -14,6 +15,7 @@ const rooms = [
     image: "assets/Deluxe.jpeg",
   },
   {
+    id: 1,
     name: "Executive Suite",
     type: "Executive",
     description:
@@ -26,6 +28,7 @@ const rooms = [
     image: "assets/Executive.jpeg",
   },
   {
+    id: 2,
     name: "Presidential Suite",
     type: "Presidential",
     description:
@@ -109,13 +112,28 @@ function createRoomCard() {
                 ><span class="amount">Rp 1.8 Jt</span
                 ><span class="night"> / night</span>
               </div>
-              <button
+              <a
                 class="btn-gold"
-                onclick="location.href = 'contact.html'"
-                style="font-size: 0.75rem; padding: 12px 24px"
               >
-                Reserve
-              </button>
+                View Detail
+              </a>
             </div>
           </div>`;
 }
+
+// Practice penerapan object pada console
+function showRoomInfo(name, price, size, guests) {
+  console.log("Room: " + name);
+  console.log("Price: " + price + " per night");
+  console.log("Size: " + size + " sqm");
+  console.log("Guests: " + guests);
+}
+
+function calculateStay(price, nights) {
+  return price * nights;
+}
+
+rooms.forEach((room) => {
+  showRoomInfo(room.name, room.priceLabel, room.size, room.guests);
+  console.log("");
+});

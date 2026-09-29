@@ -551,9 +551,7 @@ body {
   /* transition: transform 0.5s ease; */
 }
 
-.experience-item:hover img {
-  /* transform: scale(1.05); */
-}
+
 
 .experience-label {
   position: absolute;
@@ -1251,6 +1249,41 @@ footer {
 /* "use strict"; */
 
 /* NAV */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 5%;
+  box-sizing: border-box;
+}
+
+
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 35px;
+  justify-content: flex-start;
+  width: 60%;
+}
+
+
+
+.nav-links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold);
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -1355,7 +1388,7 @@ nav {
 }
 
 /* LEFT COLUMN */
-.booking-left {}
+
 
 .section-label-gold {
   font-size: 0.68rem;
@@ -1867,5 +1900,417 @@ nav {
 @media (max-width: 500px) {
   .form-row-2 {
     grid-template-columns: 1fr;
+  }
+}
+
+/* =============== Details Page ================== */
+
+.room-details-link,
+.detail-reserve,
+.detail-cta .btn-gold {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.detail-hero {
+  position: relative;
+  min-height: 660px;
+  height: 86vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--navy);
+}
+
+.detail-hero>img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: detail-image-reveal 1s ease-out both;
+}
+
+@keyframes detail-image-reveal {
+  from {
+    opacity: 0;
+    transform: scale(1.035);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.detail-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(7, 10, 12, 0.78) 0%, rgba(7, 10, 12, 0.18) 68%),
+    linear-gradient(0deg, rgba(7, 10, 12, 0.78) 0%, transparent 55%);
+}
+
+.detail-hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 5% 5.5rem;
+  color: #fff;
+}
+
+.detail-back {
+  position: absolute;
+  bottom: calc(100% + 8rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.detail-back:hover {
+  color: var(--gold-mid);
+}
+
+.detail-back span {
+  font-size: 1.1rem;
+}
+
+.detail-eyebrow {
+  color: var(--gold-mid);
+  font-size: 0.72rem;
+  letter-spacing: 4px;
+  margin-bottom: 0.9rem;
+  text-transform: uppercase;
+}
+
+.detail-hero h1 {
+  max-width: 780px;
+  color: #fff;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3.2rem, 7vw, 6.4rem);
+  font-weight: 500;
+  letter-spacing: -1px;
+  line-height: 0.95;
+}
+
+.detail-tagline {
+  max-width: 570px;
+  margin-top: 1.4rem;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.detail-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: clamp(3rem, 8vw, 8rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 7rem 5%;
+}
+
+.detail-copy h2,
+.detail-section-heading h2,
+.detail-cta h2 {
+  color: var(--ink);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.3rem, 4vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.08;
+}
+
+.detail-copy>p:last-of-type {
+  max-width: 690px;
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.95;
+}
+
+.detail-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 3.5rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-fact {
+  min-width: 0;
+  padding: 1.4rem 1rem 1.4rem 0;
+  border-right: 1px solid var(--border);
+}
+
+.detail-fact:not(:first-child) {
+  padding-left: 1.2rem;
+}
+
+.detail-fact:last-child {
+  border-right: none;
+}
+
+.detail-fact-value,
+.detail-fact-label {
+  display: block;
+}
+
+.detail-fact-value {
+  color: var(--ink);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.detail-fact-label {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: 0.6rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.detail-rate-card {
+  align-self: start;
+  padding: 2.3rem;
+  background: var(--ink);
+  box-shadow: 18px 18px 0 var(--gold-light);
+}
+
+.detail-rate-label {
+  color: var(--gold-mid);
+  font-size: 0.65rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.detail-rate {
+  margin-top: 0.7rem;
+  color: #fff;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 2.7rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.detail-rate::after {
+  content: " / night";
+  color: rgba(255, 255, 255, 0.46);
+  font-family: "Jost", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.detail-rate-note {
+  margin: 0.7rem 0 1.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.72rem;
+}
+
+.detail-reserve {
+  width: 100%;
+}
+
+.detail-contact-link {
+  display: block;
+  margin-top: 1.2rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.detail-contact-link:hover {
+  color: #fff;
+}
+
+.detail-amenities {
+  padding: 6.5rem max(5%, calc((100vw - 1200px) / 2));
+  background: var(--bg);
+}
+
+.detail-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.detail-section-heading>p {
+  max-width: 280px;
+  padding-bottom: 0.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+
+.amenity-card {
+  display: flex;
+  align-items: center;
+  min-height: 118px;
+  gap: 1.2rem;
+  padding: 1.6rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--text);
+  font-size: 0.87rem;
+}
+
+.amenity-number {
+  color: var(--gold);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.35rem;
+  font-style: italic;
+}
+
+.detail-gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(2, 260px);
+  gap: 4px;
+  padding: 4px;
+  background: #fff;
+}
+
+.detail-gallery-main {
+  grid-row: 1 / 3;
+}
+
+.detail-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-cta {
+  padding: 7rem 5%;
+  background: var(--navy);
+  text-align: center;
+}
+
+.detail-cta h2 {
+  max-width: 620px;
+  margin: 0 auto 2rem;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .detail-hero {
+    min-height: 560px;
+    height: 76vh;
+  }
+
+  .detail-overview {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .detail-rate-card {
+    max-width: 480px;
+  }
+
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .room-detail-page .nav-links {
+    gap: 12px;
+    width: auto;
+  }
+
+  .room-detail-page .nav-links a {
+    font-size: 10px;
+  }
+
+  .detail-hero {
+    min-height: 520px;
+    height: 72vh;
+  }
+
+  .detail-hero-content {
+    padding-bottom: 3rem;
+  }
+
+  .detail-back {
+    bottom: calc(100% + 4.5rem);
+  }
+
+  .detail-facts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detail-fact:nth-child(2) {
+    border-right: none;
+  }
+
+  .detail-fact:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .detail-fact:nth-child(3) {
+    padding-left: 0;
+  }
+
+  .detail-rate-card {
+    margin-right: 12px;
+  }
+
+  .detail-section-heading {
+    display: block;
+  }
+
+  .detail-section-heading>p {
+    margin-top: 1rem;
+  }
+
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 320px 180px;
+  }
+
+  .detail-gallery-main {
+    grid-column: 1 / 3;
+    grid-row: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-hero>img {
+    animation: none;
   }
 }
