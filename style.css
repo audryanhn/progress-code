@@ -728,7 +728,7 @@ body {
   color: #fff;
 }
 
-.rooms-list {
+#rooms-list {
   padding: 60px 5%;
   display: flex;
   flex-direction: column;
@@ -742,15 +742,16 @@ body {
   grid-template-columns: 380px 1fr;
   overflow: hidden;
   transition: box-shadow 0.3s;
+  margin-bottom: 20px;
 }
 
 .room-list-card:hover {
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
 }
 
-.room-list-img {
-  height: 280px;
+.room-list-img img {
   overflow: hidden;
+  object-fit: cover;
 }
 
 .room-list-img-inner {
