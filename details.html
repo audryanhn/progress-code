@@ -18,7 +18,7 @@
     <link rel="icon" href="assets/Logo.png" />
   </head>
 
-  <body class="room-detail-page">
+  <body class="room-detail-page" id="details-page">
     <main>
       <section class="detail-hero" aria-labelledby="room-title">
         <img src="assets/Deluxe.jpeg" alt="Deluxe City View" id="detail-img" />
@@ -37,32 +37,34 @@
 
       <section class="detail-overview" aria-labelledby="overview-title">
         <div class="detail-copy">
-          <p class="section-label-gold">The room</p>
-          <h2 id="overview-title">Your private view over Jakarta.</h2>
-          <p>
-            Our Deluxe City View is a 52-square-metre retreat designed around
-            the skyline. Floor-to-ceiling windows fill the room with natural
-            light, while warm timber, soft textiles, and considered details
-            create a calm counterpoint to the city below. Settle into a king
-            bed, unwind in the marble bathroom, and watch Jakarta glow after
-            dark from the comfort of your own sanctuary.
-          </p>
+          <div class="detail-info">
+            <p class="section-label-gold">The room</p>
+            <h2 id="overview-title">Your private view over Jakarta.</h2>
+            <p id="detail-description">
+              Our Deluxe City View is a 52-square-metre retreat designed around
+              the skyline. Floor-to-ceiling windows fill the room with natural
+              light, while warm timber, soft textiles, and considered details
+              create a calm counterpoint to the city below. Settle into a king
+              bed, unwind in the marble bathroom, and watch Jakarta glow after
+              dark from the comfort of your own sanctuary.
+            </p>
+          </div>
 
           <div class="detail-facts" aria-label="Room specifications">
             <div class="detail-fact">
-              <span class="detail-fact-value">52</span>
+              <span class="detail-fact-value" id="detail-size">52</span>
               <span class="detail-fact-label">Square metres</span>
             </div>
             <div class="detail-fact">
-              <span class="detail-fact-value">2</span>
+              <span class="detail-fact-value" id="detail-guests">2</span>
               <span class="detail-fact-label">Guests</span>
             </div>
             <div class="detail-fact">
-              <span class="detail-fact-value">King</span>
+              <span class="detail-fact-value" id="detail-bed">King</span>
               <span class="detail-fact-label">Bed</span>
             </div>
             <div class="detail-fact">
-              <span class="detail-fact-value">32F</span>
+              <span class="detail-fact-value" id="detail-floor">32F</span>
               <span class="detail-fact-label">Floor</span>
             </div>
           </div>
@@ -70,12 +72,9 @@
 
         <aside class="detail-rate-card" aria-label="Room rate and reservation">
           <p class="detail-rate-label">Rates from</p>
-          <p class="detail-rate">Rp 1.8 Jt</p>
+          <p class="detail-rate" id="detail-price-label">Rp 1.8 Jt</p>
           <p class="detail-rate-note">Per room, per night. Taxes may apply.</p>
-          <a
-            class="btn-gold detail-reserve"
-            href="contact.html?room=deluxe-city-view"
-          >
+          <a class="btn-gold detail-reserve" href="contact.html">
             Reserve this room
           </a>
           <a class="detail-contact-link" href="contact.html">
@@ -99,27 +98,19 @@
         <div class="amenities-grid">
           <div class="amenity-card">
             <span class="amenity-number">01</span>
-            <div>
-              <strong>King-size bed</strong>
-            </div>
+            <strong class="detail-amenity">King-size bed</strong>
           </div>
           <div class="amenity-card">
             <span class="amenity-number">02</span>
-            <div>
-              <strong>Panoramic city view</strong>
-            </div>
+            <strong class="detail-amenity">Panoramic city view</strong>
           </div>
           <div class="amenity-card">
             <span class="amenity-number">03</span>
-            <div>
-              <strong>Marble bathroom</strong>
-            </div>
+            <strong class="detail-amenity">Marble bathroom</strong>
           </div>
           <div class="amenity-card">
             <span class="amenity-number">04</span>
-            <div>
-              <strong>High-speed Wi-Fi</strong>
-            </div>
+            <strong class="detail-amenity">High-speed Wi-Fi</strong>
           </div>
         </div>
       </section>
@@ -142,12 +133,8 @@
       <section class="detail-cta">
         <p class="section-label-gold">Your stay awaits</p>
         <h2>Meet Jakarta from a different point of view.</h2>
-        <p class="detail-cta-copy">
-          Deluxe City View · From Rp 1.8 Jt per night
-        </p>
-        <a class="btn-gold" href="contact.html?room=deluxe-city-view">
-          Reserve your stay
-        </a>
+
+        <a class="btn-gold" href="contact.html"> Reserve your stay </a>
       </section>
     </main>
 
@@ -193,5 +180,6 @@
         <span>Jakarta, Indonesia</span>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

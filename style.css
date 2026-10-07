@@ -302,7 +302,7 @@ body {
 }
 
 /* filter btn css */
-.room-filter-btns {
+/* .room-filter-btns {
   display: flex;
   gap: 0.5rem;
 }
@@ -323,7 +323,7 @@ body {
 .filter-btn.active {
   background: var(--gold);
   color: white;
-}
+} */
 
 /* filter btn css end */
 
@@ -2022,6 +2022,12 @@ nav {
   padding: 7rem 5%;
 }
 
+.detail-info {
+  font-family: "Jost", sans-serif;
+  color: var(--text);
+  background: var(--white);
+}
+
 .detail-copy h2,
 .detail-section-heading h2,
 .detail-cta h2 {
@@ -2032,7 +2038,7 @@ nav {
   line-height: 1.08;
 }
 
-.detail-copy>p:last-of-type {
+.detail-info>p:last-of-type {
   max-width: 690px;
   margin-top: 1.5rem;
   color: var(--muted);

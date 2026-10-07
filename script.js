@@ -2,7 +2,7 @@
 
 const rooms = [
   {
-    id: 0,
+    id: "deluxe-city-view",
     name: "Deluxe City View",
     type: "Deluxe",
     description:
@@ -10,12 +10,31 @@ const rooms = [
     price: 1800000,
     priceLabel: "Rp 1.8 Jt",
     size: 52,
+    bed: "King",
     guests: 2,
     floor: "32F",
     image: "assets/Deluxe.jpeg",
+    amenities: ["King Bed", "Bathtub", "Wi-Fi", "City View"],
+
+    // =============== Add More Data Below ==================
+
+    detail: {
+      title: "Your private view over Jakarta.",
+      description:
+        "Our Deluxe City View is a 52-square-metre retreat designed around the skyline. Floor-to-ceiling windows fill the room with natural light, while warm timber, soft textiles, and considered details create a calm counterpoint to the city below. Settle into a king bed, unwind in the marble bathroom, and watch Jakarta glow after dark from the comfort of your own sanctuary.",
+      amenities: [
+        { title: "King-size bed", description: "Premium linens and pillows" },
+        {
+          title: "Panoramic city view",
+          description: "Floor-to-ceiling windows",
+        },
+        { title: "Marble bathroom", description: "Bathtub and rain shower" },
+        { title: "High-speed Wi-Fi", description: "Complimentary access" },
+      ],
+    },
   },
   {
-    id: 1,
+    id: "executive-suite",
     name: "Executive Suite",
     type: "Executive",
     description:
@@ -23,12 +42,39 @@ const rooms = [
     price: 3500000,
     priceLabel: "Rp 3.5 Jt",
     size: 90,
+    bed: "King",
     guests: 2,
     floor: "38F",
     image: "assets/Executive.jpeg",
+    amenities: [
+      "Living Area",
+      "Private Bar",
+      "Soaking Tub",
+      "Executive Lounge",
+    ],
+    detail: {
+      title: "More room to settle into the city.",
+      description:
+        "Designed for guests who appreciate space and privacy, the Executive Suite offers a separate living room, an elegant bedroom, and a private bar for relaxed evenings in. High above Jakarta, the suite creates a calm place to work, entertain, or simply enjoy a slower stay.",
+      gallery: [
+        {
+          image: "assets/Executive.jpeg",
+          alt: "Executive Suite living area",
+        },
+        {
+          image: "assets/exp-3.jpg",
+          alt: "Executive Suite bedroom",
+        },
+        {
+          image: "assets/exp-4.png",
+          alt: "Executive lounge experience",
+        },
+      ],
+      ctaTitle: "Give your Jakarta stay more room to unfold.",
+    },
   },
   {
-    id: 2,
+    id: "presidential-suite",
     name: "Presidential Suite",
     type: "Presidential",
     description:
@@ -36,9 +82,36 @@ const rooms = [
     price: 8000000,
     priceLabel: "Rp 8 Jt",
     size: 240,
+    bed: "Two King",
     guests: 4,
     floor: "42F",
     image: "assets/Presidential.jpeg",
+    amenities: [
+      "Two Bedrooms",
+      "Private Cinema",
+      "Dining Room",
+      "Rooftop Pool",
+    ],
+    detail: {
+      title: "The city’s most private address.",
+      description:
+        "The Presidential Suite is an expansive private residence above Jakarta. With two elegant bedrooms, a private cinema, dedicated dining room, and rooftop pool access, every detail is designed for exceptional stays, intimate celebrations, and effortless entertaining.",
+      gallery: [
+        {
+          image: "assets/Presidential.jpeg",
+          alt: "Presidential Suite interior",
+        },
+        {
+          image: "assets/exp-5.png",
+          alt: "Private dining experience",
+        },
+        {
+          image: "assets/exp-6.png",
+          alt: "Rooftop pool overlooking Jakarta",
+        },
+      ],
+      ctaTitle: "Make every moment in Jakarta unforgettable.",
+    },
   },
 ];
 
@@ -98,7 +171,7 @@ function createRoomCard(room) {
     <span class="amount">${room.priceLabel}</span>
     <span class="night"> / night</span>
   </div>
-  <a class="btn-gold">
+  <a class="btn-gold" data-id=${room.id}>
     View Detail
   </a>
 </div>
@@ -107,9 +180,63 @@ function createRoomCard(room) {
   return roomCard;
 }
 
-for (let i = 1; i < rooms.length; i++) {
-  const roomsList = document.querySelector("#rooms-list");
-  const roomCard = createRoomCard(rooms[i]);
-  console.log(roomCard);
-  roomsList.appendChild(roomCard);
+const isRoom = document.getElementById("rooms-page");
+if (isRoom != null) {
+  for (let i = 1; i < rooms.length; i++) {
+    const roomsList = document.querySelector("#rooms-list");
+    const roomCard = createRoomCard(rooms[i]);
+    roomsList.appendChild(roomCard);
+  }
+}
+
+const buttons = document.querySelectorAll(".btn-gold");
+// console.log(buttons); // Comment this code
+
+buttons.forEach((button, index) => {
+  button.addEventListener("click", () => {
+    const roomId = button.dataset.id;
+    sessionStorage.setItem("roomId", roomId);
+    window.location.href = "details.html";
+  });
+});
+
+const isDetail = document.getElementById("details-page");
+if (isDetail != null) {
+  const roomId = sessionStorage.getItem("roomId");
+
+  rooms.forEach((room) => {
+    if (room.id == roomId) {
+      // console.log(room);
+      // Add Code Below
+      document.getElementById("detail-img").src = room.image;
+      document.getElementById("room-title").textContent = room.name;
+      // Add Code Below
+      document.getElementById("overview-title").textContent = room.name;
+      document.getElementById("detail-description").textContent =
+        room.detail.description;
+      // Add Code Below
+      document.getElementById("detail-size").textContent = room.size;
+      document.getElementById("detail-guests").textContent = room.guests;
+      document.getElementById("detail-bed").textContent = room.bed;
+      // Add Code Below
+      document.getElementById("detail-floor").textContent = room.floor;
+      document.getElementById("detail-price-label").textContent =
+        room.priceLabel;
+      // Add Code Below
+      for (let i = 0; i < room.amenities.length; i++) {
+        document.getElementsByClassName("detail-amenity")[i].textContent =
+          room.amenities[i];
+      }
+      // Add Code Below
+      for (let i = 0; i < room.detail.gallery.length; i++) {
+        document.querySelectorAll(".detail-gallery img")[i].src =
+          room.detail.gallery[i].image;
+        document.querySelectorAll(".detail-gallery img")[i].alt =
+          room.detail.gallery[i].alt;
+      }
+      // Add Code Below
+      document.querySelector(".detail-cta h2").textContent =
+        room.detail.ctaTitle;
+    }
+  });
 }
