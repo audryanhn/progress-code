@@ -384,9 +384,7 @@ body {
 }
 
 .room-img-inner {
-  /* height: 100%; */
   min-width: 100%;
-  background: linear-gradient(135deg, var(--navy) 0%, #2a3a4a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -446,10 +444,13 @@ body {
 .amenity {
   font-size: 0.72rem;
   letter-spacing: 1px;
-  color: var(--muted);
+  color: var(--white);
   display: flex;
   align-items: center;
   gap: 4px;
+  background-color: var(--gold);
+  padding: 6px;
+  border-radius: 16px;
 }
 
 .room-footer {
