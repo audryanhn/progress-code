@@ -302,7 +302,7 @@ body {
 }
 
 /* filter btn css */
-/* .room-filter-btns {
+.room-filter-btns {
   display: flex;
   gap: 0.5rem;
 }
@@ -323,7 +323,7 @@ body {
 .filter-btn.active {
   background: var(--gold);
   color: white;
-} */
+}
 
 /* filter btn css end */
 
@@ -379,9 +379,17 @@ body {
 }
 
 .room-img {
-  height: 100%;
   overflow: hidden;
+  height: 100%;
+  max-height: 300px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  object-fit: contain;
 }
+
 
 .room-img-inner {
   min-width: 100%;
