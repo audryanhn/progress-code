@@ -54,7 +54,6 @@ body {
   min-width: 100%;
 }
 
-
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -301,31 +300,30 @@ body {
   font-weight: 300;
 }
 
-/* filter btn css */
-/* .room-filter-btns {
+/* Filter Button CSS Start */
+.room-filter-btns {
   display: flex;
-  gap: 0.5rem;
+  gap: 8px;
 }
 
 .filter-btn {
-  padding: 0.4rem 1rem;
+  padding: 6px 16px;
   border: 1px solid var(--gold);
   background: transparent;
   color: var(--gold);
-  font-family: inherit;
-  font-size: 0.8rem;
+  font-size: 13px;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
+  /* transition: background 0.3s, color 0.3s; */
 }
 
 .filter-btn:hover,
 .filter-btn.active {
   background: var(--gold);
   color: white;
-} */
+}
 
-/* filter btn css end */
+/* Filter Button CSS End */
 
 /* ROOMS */
 .rooms-section {
@@ -375,43 +373,19 @@ body {
   grid-template-columns: 1fr 1fr;
   max-width: 1500px;
   max-height: 750px;
-  margin: 0 auto
+  margin: 0 auto;
 }
 
 .room-img {
-  height: 100%;
   overflow: hidden;
-}
-
-.room-img-inner {
-  min-width: 100%;
+  height: 100%;
+  max-height: 300px;
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  min-height: 200px;
-}
-
-.room-img-inner .room-pattern {
-  position: absolute;
-  inset: 0;
-  opacity: 0.12;
-  background-image: radial-gradient(circle at 2px 2px,
-      white 1px,
-      transparent 0);
-  background-size: 20px 20px;
-}
-
-.room-badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  background: var(--gold);
-  color: #fff;
-  font-size: 0.65rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 5px 12px;
+  object-fit: contain;
 }
 
 .room-body {
@@ -551,8 +525,6 @@ body {
   display: block;
   /* transition: transform 0.5s ease; */
 }
-
-
 
 .experience-label {
   position: absolute;
@@ -829,7 +801,6 @@ body {
   height: 100%;
   border: none;
   display: block;
-
 }
 
 .about-split {
@@ -1193,7 +1164,6 @@ footer {
 /* =============== Responsive ================== */
 
 @media (max-width: 900px) {
-
   #nature-view {
     grid-column: span 2;
   }
@@ -1260,8 +1230,6 @@ footer {
   box-sizing: border-box;
 }
 
-
-
 .nav-links {
   list-style-type: none;
   display: flex;
@@ -1270,16 +1238,12 @@ footer {
   width: 60%;
 }
 
-
-
 .nav-links a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.75);
   font-size: 13px;
   font-weight: 500;
 }
-
-
 
 .nav-links a:hover,
 .nav-links a.active {
@@ -1391,7 +1355,6 @@ nav {
 
 /* LEFT COLUMN */
 
-
 .section-label-gold {
   font-size: 0.68rem;
   letter-spacing: 3px;
@@ -1432,9 +1395,11 @@ nav {
   position: absolute;
   inset: 0;
   opacity: 0.12;
-  background-image: radial-gradient(circle at 2px 2px,
-      white 1px,
-      transparent 0);
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    white 1px,
+    transparent 0
+  );
   background-size: 20px 20px;
 }
 
@@ -1925,7 +1890,7 @@ nav {
   background: var(--navy);
 }
 
-.detail-hero>img {
+.detail-hero > img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -2039,7 +2004,7 @@ nav {
   line-height: 1.08;
 }
 
-.detail-info>p:last-of-type {
+.detail-info > p:last-of-type {
   max-width: 690px;
   margin-top: 1.5rem;
   color: var(--muted);
@@ -2162,7 +2127,7 @@ nav {
   margin-bottom: 3rem;
 }
 
-.detail-section-heading>p {
+.detail-section-heading > p {
   max-width: 280px;
   padding-bottom: 0.5rem;
   color: var(--muted);
@@ -2298,7 +2263,7 @@ nav {
     display: block;
   }
 
-  .detail-section-heading>p {
+  .detail-section-heading > p {
     margin-top: 1rem;
   }
 
@@ -2318,7 +2283,7 @@ nav {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .detail-hero>img {
+  .detail-hero > img {
     animation: none;
   }
 }
