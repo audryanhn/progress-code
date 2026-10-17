@@ -240,3 +240,46 @@ if (isDetail != null) {
     }
   });
 }
+const isHome = document.getElementById("home-page");
+
+if (isHome !== null) {
+  const filterbuttons = document.querySelectorAll(".filter-btn");
+  // Add Code Below
+
+  filterbuttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      filterbuttons.forEach((button) => {
+        button.classList.remove("active");
+      });
+      // Add Code Above
+      button.classList.add("active");
+      // Add Code Below
+      const room = button.dataset.room;
+      // Add Code Below
+      let roomId = 0;
+      switch (room) {
+        case "deluxe":
+          roomId = 0;
+          break;
+        case "executive":
+          roomId = 1;
+          break;
+        case "presidential":
+          roomId = 2;
+          break;
+      }
+      const roomData = rooms[roomId];
+      // Add Code Below
+
+      document.getElementById("room-photo").src = roomData.image;
+      document.getElementById("room-name").textContent = roomData.name;
+      document.getElementById("room-desc").textContent = roomData.description;
+      // Add Code Below
+      const roomAmenities = document.querySelectorAll(".amenity");
+      roomAmenities.forEach((amenity, index) => {
+        amenity.textContent = roomData.amenities[index];
+      });
+      document.getElementById("room-price").textContent = roomData.priceLabel;
+    });
+  });
+}
