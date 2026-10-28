@@ -1042,6 +1042,76 @@ body {
   font-weight: 300;
 }
 
+.form-container {
+  padding: 84px 40px;
+}
+
+/* Add Code Below */
+.form-container h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 32px;
+}
+
+.form-container label {
+  margin-top: 20px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+  font-family: "Jost", sans-serif;
+}
+
+.date-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+#check-in {
+  grid-row: 2;
+}
+
+/* Add Code Below */
+.form-button {
+  margin-top: 8px;
+  padding: 14px 36px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-family: "Jost", sans-serif;
+  color: #fff;
+  background: var(--ink);
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background: var(--gold);
+}
+
+/* Add Code Below */
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+  border-color: var(--gold);
+}
+
 /* FOOTER */
 footer {
   background: var(--ink);
