@@ -72,12 +72,13 @@
         <div class="form-container">
           <h2>Reservation Enquiry</h2>
           <!-- Add Code Below -->
-          <form action="">
+          <form>
             <label for="name">Name</label>
             <input
               type="text"
               name="name"
               id="name"
+              required
               placeholder="Enter your name"
             />
             <!-- Add Code Below -->
@@ -86,6 +87,7 @@
               type="email"
               name="email"
               id="email"
+              required
               placeholder="example@email.com"
             />
             <!-- Add Code Below -->
@@ -112,6 +114,17 @@
 
             <button type="Submit" class="form-button">Send Enquiry</button>
           </form>
+        </div>
+      </div>
+
+      <div class="modal-overlay hidden" id="modal-overlay">
+        <div class="modal-content">
+          <p class="modal-eyebrow">Enquiry sent</p>
+          <h3 id="modal-title">Thank you for contacting us.</h3>
+          <p>We will reach you soon!</p>
+          <button class="form-button" id="modal-close" type="button">
+            Close
+          </button>
         </div>
       </div>
 

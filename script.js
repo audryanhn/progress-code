@@ -290,27 +290,46 @@ const tableBody = document.querySelector("#tableBody");
 let amenitiesHTML = "";
 let tableBodyHTML = "";
 // Add Code Below
-tableHead.innerHTML = `<tr>
+if (tableHead !== null && tableBody !== null) {
+  tableHead.innerHTML = `<tr>
   <th>Rooms</th>
   <th>Price / Night</th>
   <th>Amenities</th>
 </tr>`;
-
-for (let i = 0; i < rooms.length; i++) {
-  const room = rooms[i];
-
-  let amenitiesHTML = "";
-  for (let j = 0; j < room.amenities.length; j++) {
-    amenitiesHTML += `<li>${room.amenities[j]}</li>`; // Amenities For Code
-  }
   // Add Code Below
-  tableBody.innerHTML += `
+  for (let i = 0; i < rooms.length; i++) {
+    const room = rooms[i];
+
+    let amenitiesHTML = "";
+    for (let j = 0; j < room.amenities.length; j++) {
+      amenitiesHTML += `<li>${room.amenities[j]}</li>`; // Amenities For Code
+    }
+    // Add Code Below
+    tableBody.innerHTML += `
 <tr>
   <td>${room.name}</td>
   <td>Rp ${room.price.toLocaleString("id-ID")}</td>
   <td><ul>${amenitiesHTML}</ul></td>
 </tr>
 `;
+  }
 }
-
 // ============== End of Table New Way =================
+
+const isContact = document.querySelector("#contact-page");
+if (isContact !== null) {
+  console.log("Contact Page"); // Delete this code
+  // Add code below
+
+  const modalOverlay = document.querySelector("#modal-overlay");
+  const closeModalButton = document.querySelector("#modal-close");
+  const enquiryForm = document.querySelector("form");
+
+  enquiryForm.addEventListener("submit", (event) => {
+    modalOverlay.classList.remove("hidden");
+  });
+
+  closeModalButton.addEventListener("click", () => {
+    modalOverlay.classList.add("hidden");
+  });
+}

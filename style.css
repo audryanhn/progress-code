@@ -1112,6 +1112,48 @@ body {
   border-color: var(--gold);
 }
 
+.modal-overlay.hidden {
+  display: none;
+}
+/* Add Code Above */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background: rgba(21, 27, 37, 0.72);
+}
+
+/* Add Code Below */
+.modal-content {
+  width: min(100%, 440px);
+  padding: 40px;
+  background: var(--bg);
+  box-shadow: 1px 20px 50px black;
+  text-align: center;
+}
+
+.modal-eyebrow {
+  margin-bottom: 24px;
+  color: var(--gold);
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.modal-overlay h3 {
+  margin-bottom: 24px;
+  color: var(--ink);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 500;
+}
+
 /* FOOTER */
 footer {
   background: var(--ink);
