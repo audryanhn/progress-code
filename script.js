@@ -326,6 +326,7 @@ if (isContact !== null) {
   const enquiryForm = document.querySelector("form");
 
   enquiryForm.addEventListener("submit", (event) => {
+    event.preventDefault();
     modalOverlay.classList.remove("hidden");
   });
 
