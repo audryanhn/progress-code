@@ -72,10 +72,21 @@
         <div class="form-container">
           <h2>Reservation Enquiry</h2>
           <!-- Add Code Below -->
+          <iframe name="submit-response" hidden></iframe>
+
+          <!-- Add Code Above -->
           <form
-            action="https://formsubmit.co/timedoorkgdummy@gmail.com"
+            action="https://api.web3forms.com/submit"
             method="post"
+            target="submit-response"
           >
+            <!-- Add Code Below -->
+            <input
+              type="hidden"
+              name="access_key"
+              value="d7bbb269-171a-4678-9bfd-1931f1b37056"
+            />
+            <!-- Add Code Above -->
             <label for="name">Name</label>
             <input
               type="text"
@@ -114,9 +125,8 @@
               id="special-request"
               placeholder="Let us know how can we make extraordinary..."
             ></textarea>
-            <input type="hidden" name="_captcha" value="false" />
-            <!-- Add Code Above -->
-            <button type="Submit" class="form-button">Send Enquiry</button>
+
+            <button type="submit" class="form-button">Send Enquiry</button>
           </form>
         </div>
       </div>

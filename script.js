@@ -325,8 +325,7 @@ if (isContact !== null) {
   const closeModalButton = document.querySelector("#modal-close");
   const enquiryForm = document.querySelector("form");
 
-  enquiryForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+  enquiryForm.addEventListener("submit", () => {
     modalOverlay.classList.remove("hidden");
   });
 
